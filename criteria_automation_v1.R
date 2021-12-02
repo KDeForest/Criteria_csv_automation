@@ -2,7 +2,7 @@
 library(tidyverse);library(dplyr);library(tibble)
 
 #read in data
-a <- read_csv("criteria_scores_trat.csv", col_names =FALSE) %>% rownames_to_column()
+a <- read_csv("criteria_scores_ex.csv", col_names =FALSE) %>% rownames_to_column()
 
 f <- as.character
 
@@ -21,5 +21,6 @@ for(i in 1:length(Rating)){
  #write to csv 
   write.table( d, file = paste0("criteria_scores_",i,".csv"), sep=",",  col.names=FALSE, row.names = FALSE)
 }
+
 
 

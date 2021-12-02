@@ -1,0 +1,27 @@
+HABITAT NAME,dolphin,,,CRITERIA TYPE
+,,,,
+HABITAT RESILIENCE ATTRIBUTES,,,,
+,Rating,DQ,Weight,E/C
+age of maturity,3,2,2,C
+reproductive strategy,2,2,2,C
+population connectivity,2,2,2,C
+local species status,SPATIAL DATA FILE,2,2,C
+,,,,
+HABITAT STRESSOR OVERLAP PROPERTIES,,,,
+traps,Rating,DQ,Weight,E/C
+mortality,2,2,2,C
+life stages affected by gear,2,1,2,C
+intensity,SPATIAL DATA FILE,2,2,E
+likelihood of interaction,3,2,2,E
+temporal overlap,3,2,2,E
+catchability,2,2,2,E
+current status of management,2,2,2,E
+,,,,
+nets,Rating,DQ,Weight,E/C
+mortality,3,2,2,C
+life stages affected by gear,2,1,2,C
+intensity,SPATIAL DATA FILE,2,2,E
+likelihood of interaction,2,2,2,E
+temporal overlap,3,2,2,E
+catchability,3,2,2,E
+current status of management,1,2,2,E
