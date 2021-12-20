@@ -5,7 +5,7 @@ library(tidyverse);library(dplyr);library(tibble)
 #a <- read_csv("criteria_scores_ex.csv", col_names =FALSE) %>% rownames_to_column()
 crit <- read_csv("Criteria_ex1.csv")
 
-#BUILD ROWS FOR ADDITIONAL TABLE
+#BUILD ROWS TO MATCH CRITERIA TABLE FORMAT
 hab_name <- "dolphin"
 
 r1 <- c("HABITAT NAME", `hab_name`, " ", " ", "CRITERIA TYPE")
@@ -34,7 +34,7 @@ stres <- grepl("score|stressor1", colnames(crit))
 
 for(i in 1:length(runs)){
   #transpose matrix for resilience criteria
-  res_crit <- crit[crit$scenario == i,][2:5,] #uses scenario column to subset dataframe
+  res_crit <- crit[crit$scenario == i,][2:5,] #uses scenario column to subset matrix
   res_crit <- dplyr::bind_rows(names, res_crit) #adds column descriptions back in after subset
   res_crit <- res_crit[res]
   res_crit <- t(res_crit)
