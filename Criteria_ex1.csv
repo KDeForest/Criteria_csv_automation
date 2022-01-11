@@ -1,14 +1,14 @@
-scenario,scoretype,resilience.c1,resilience.c2,resilience.c3,resilience.c4,resilience.c5,resilience.c6,stressor1.c1,stressor1.c2,stressor1.c3,stressor1.c4,stressor1.c5
+﻿scenario,scoretype,resilience.c1,resilience.c2,resilience.c3,resilience.c4,resilience.c5,resilience.c6,stressor1.c1,stressor1.c2,stressor1.c3,stressor1.c4,stressor1.c5
 NA,scoretype,age of maturity,reproductive strategy,r,population connectivity,species distribution,species status,mortality,life stages affected,intensity,likelihood of interaction,status of management
 1,Rating,2,2,NA,2,dolphin_density,2,3,2,2,3,NA
 1,DQ,2,3,NA,2,2,3,2,3,1,2,NA
 1,Weight,2,2,NA,,2,2,3,2,2,2,NA
-1,EC,C,C,NA,C,C,,C,C,E,E,NA
+1,E/C,C,C,NA,C,C,,C,C,E,E,NA
 2,Rating,2,NA,3,2,dolphin_density,1,3,2,2,2,1
 2,DQ,3,NA,3,2,2,2,2,1,2,2,1
 2,Weight,2,NA,2,,2,2,2,2,2,2,1
-2,EC,C,NA,C,C,C,,C,C,E,E,E
+2,E/C,C,NA,C,C,C,,C,C,E,E,E
 3,Rating,2,2,NA,2,NA,dolphin_density,3,2,2,1,2
 3,DQ,1,1,NA,2,NA,2,2,2,3,2,2
 3,Weight,2,2,NA,2,NA,2,1,2,2,2,2
-3,EC,C,C,NA,C,NA,C,C,C,E,E,E
+3,E/C,C,C,NA,C,NA,C,C,C,E,E,E
