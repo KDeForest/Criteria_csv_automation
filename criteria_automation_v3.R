@@ -48,7 +48,7 @@ for(i in 1:length(runs)){
     print(paste("ERROR - The following column in scenario", i, "contains NAs:", colna))#Need to implement this in a better way
     #Check to see if the user would like to continue building the tables without the missing criteria
     checkFunction()
-    print("Creating tables without missing criteria")
+    print("Creating tables with missing criteria")
   } 
   res_crit <- dplyr::bind_rows(names, res_crit) #Adds column descriptions back in after subset
   res_crit <- res_crit[res]
