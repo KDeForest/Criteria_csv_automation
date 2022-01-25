@@ -2,17 +2,15 @@
 library(tidyverse)
 
 #DATA
-#a <- read_csv("criteria_scores_ex.csv", col_names =FALSE) %>% rownames_to_column()
 crit <- read_csv("Criteria_ex1.csv")
 
 #BUILD DF FOR ADDITIONAL TABLE ROWS
-hab_name <- "sim"
+hab_name <- "hab_sim"
 
 r1 <- c("HABITAT NAME", `hab_name`, " ", " ", "CRITERIA TYPE")
 space <- c("", "", "", "", "")
 r3 <- c("HABITAT RESILIENCE ATTRIBUTES","", "", "", "")
 r4 <- c("HABITAT STRESSOR OVERLAP PROPERTIES","", "", "", "")
-top <- rbind(r1,space,r3)
 
 #SET UP FOR LOOP 
 
@@ -59,20 +57,22 @@ for(i in 1:length(runs)){
   res_crit <- res_crit[res]
   res_crit <- res_crit[ , colSums(is.na(res_crit)) == 0]
   res_crit <- t(res_crit)
+  res_crit[res_crit == "scoretype"] <- "HABITAT RESILIENCE ATTRIBUTES"
   
   #transpose stressor criteria
   
   stress_crit <- df[df$scenario == i,]
-  stress_crit <- dplyr::bind_rows(names, stress_crit)
+  stress_crit <- bind_rows(names, stress_crit)
   stress_crit <- stress_crit[stres]
   stress_crit <- stress_crit[ , colSums(is.na(stress_crit)) == 0]
   stress_crit <- t(stress_crit)
+  stress_crit[stress_crit == "scoretype"] <- "gear_sim"
+  
   
   #bind to top
-  crit_tables <- rbind(top,res_crit,space,r4,stress_crit)
+  crit_tables <- rbind(r1,res_crit,space,r4,stress_crit)
   write.table(crit_tables, paste0("criteria_scores_",i,".csv"), append = FALSE, sep = ",",
               row.names = FALSE, col.names = FALSE)
   
 }
-
 
