@@ -53,7 +53,7 @@ for(i in 1:length(runs)){
   }
   #transpose resilience criteria
   res_crit <- df[df$scenario == i,] #uses scenario column to subset dataframe
-  res_crit <- dplyr::bind_rows(names, res_crit) #adds column descriptions back in after subset
+  res_crit <- bind_rows(names, res_crit) #adds column descriptions back in after subset
   res_crit <- res_crit[res]
   res_crit <- res_crit[ , colSums(is.na(res_crit)) == 0]
   res_crit <- t(res_crit)
