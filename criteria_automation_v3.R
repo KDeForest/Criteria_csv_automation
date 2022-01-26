@@ -2,12 +2,15 @@
 library(tidyverse)
 
 #DATA
+## provide working directory and input csv path below
+
+#setwd("set/working/directory")
 crit <- read_csv("Criteria_ex1.csv")
 
-#BUILD DF FOR ADDITIONAL TABLE ROWS
-hab_name <- "hab_sim"
 
-r1 <- c("HABITAT NAME", `hab_name`, " ", " ", "CRITERIA TYPE")
+#BUILD DF FOR ADDITIONAL TABLE ROWS
+
+r1 <- c("HABITAT NAME", "hab_sim", " ", " ", "CRITERIA TYPE")
 space <- c("", "", "", "", "")
 r3 <- c("HABITAT RESILIENCE ATTRIBUTES","", "", "", "")
 r4 <- c("HABITAT STRESSOR OVERLAP PROPERTIES","", "", "", "")
