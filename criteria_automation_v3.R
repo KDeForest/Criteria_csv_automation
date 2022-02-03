@@ -1,6 +1,5 @@
 #libraries
 library(readr)
-library(dplyr)
 
 #DATA
 ## provide working directory and input csv path below
@@ -23,8 +22,7 @@ r4 <- c("HABITAT STRESSOR OVERLAP PROPERTIES","", "", "", "")
 #SET UP FOR LOOP 
 
 ## Drop row of criterion names
-df <- crit %>% 
-  filter(!is.na(scenario))
+df <- crit[-1,]
 
 ## This dictates how many loops run based on the number of scenarios in the input table
 runs <- unique(df$scenario)
