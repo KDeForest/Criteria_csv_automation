@@ -52,7 +52,7 @@ for(i in 1:length(runs)){
 
 # This loops checks for errors identified in the loop above and creates the csvs if no errors exist.
 for(i in 1:length(runs)){
-  if(length(errors > 0)){
+  if(length(errors) > 0){
     print("Errors were found in the following scenarios:")
     print(errors)
     stop("Exiting since errors exist in the input table.")
