@@ -1,4 +1,5 @@
 #libraries
+library(dplyr)
 library(readr)
 
 #DATA
@@ -63,7 +64,7 @@ for(i in 1:length(runs)){
   res_crit <- res_crit[res]
   res_crit <- res_crit[ , colSums(is.na(res_crit)) == 0]
   res_crit <- t(res_crit)
-  res_crit[res_crit == "scoretype"] <- "HABITAT RESILIENCE ATTRIBUTES"
+  res_crit[res_crit == "scoretype"] <- ""
   
   #transpose stressor criteria
   
@@ -76,7 +77,7 @@ for(i in 1:length(runs)){
   
   
   #bind to top
-  crit_tables <- rbind(r1,res_crit,space,r4,stress_crit)
+  crit_tables <- rbind(r1,space, r3, res_crit,space,r4,stress_crit)
   write.table(crit_tables, paste0("criteria_scores_",i,".csv"), append = FALSE, sep = ",",
               row.names = FALSE, col.names = FALSE)
   
