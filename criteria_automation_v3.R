@@ -6,7 +6,7 @@ library(dplyr)
 ## provide working directory and input csv path below
 
 #setwd("set/working/directory")
-crit <- read_csv("Criteria_ex1.csv")
+crit <- read_csv("criteria_df.csv")
 
 
 #BUILD DF FOR ADDITIONAL TABLE ROWS
