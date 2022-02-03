@@ -4,23 +4,25 @@ library(dplyr)
 
 #DATA
 ## provide working directory and input csv path below
-
 #setwd("set/working/directory")
+
+## import data
 crit <- read_csv("criteria_df.csv")
 
-# force scenario field to character
+## force scenario field to character
 crit$scenario <- as.character(crit$scenario)
 
-#BUILD DF FOR ADDITIONAL TABLE ROWS
 
-r1 <- c("HABITAT NAME", "hab_sim", " ", " ", "CRITERIA TYPE")
+# CREATE HEADER AND SPACER ROWS FOR FINAL TABLE
+r1 <- c("HABITAT NAME", "species_sim", " ", " ", "CRITERIA TYPE")
 space <- c("", "", "", "", "")
 r3 <- c("HABITAT RESILIENCE ATTRIBUTES","", "", "", "")
 r4 <- c("HABITAT STRESSOR OVERLAP PROPERTIES","", "", "", "")
 
+
 #SET UP FOR LOOP 
 
-## Create df without NAs to use in loop
+## Drop row of criterion names
 df <- crit %>% 
   filter(!is.na(scenario))
 
@@ -30,7 +32,7 @@ runs <- unique(df$scenario)
 ## Create a df of just the critera names to later bind to the criteria tables
 names <- crit[1,]
 
-## Create boolean lists for columns needed for each table
+## Create boolean vectors identifying columns needed for each table
 res <- grepl("score|resilience", colnames(crit)) 
 stres <- grepl("score|stressor1", colnames(crit)) 
 
