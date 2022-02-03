@@ -8,6 +8,8 @@ library(dplyr)
 #setwd("set/working/directory")
 crit <- read_csv("criteria_df.csv")
 
+# force scenario field to character
+crit$scenario <- as.character(crit$scenario)
 
 #BUILD DF FOR ADDITIONAL TABLE ROWS
 
