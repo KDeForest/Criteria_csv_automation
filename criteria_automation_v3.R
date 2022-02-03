@@ -43,7 +43,7 @@ errors <- list()
 for(i in 1:length(runs)){
   res_crit <- df[df$scenario == i,] #uses scenario column to subset dataframe
   numRows <- nrow(res_crit) #get number of rows in current df
-  findNAs <- as.data.frame(cbind(lapply(lapply(res_crit, is.na), sum))) #find the number of nas for each column
+  findNAs <- as.data.frame(cbind(lapply(res_crit, function(x) sum(is.na(x))))) #find the number of nas for each column
   colna <- rownames(subset(findNAs, (findNAs$V1 < numRows & findNAs$V1 > 0))) #find columns that have errors
   if(length(colna > 0)){
     scenNum <- i
