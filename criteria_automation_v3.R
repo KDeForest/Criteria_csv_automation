@@ -47,7 +47,7 @@ for(i in 1:length(runs)){
   colna <- rownames(subset(findNAs, (findNAs$V1 < numRows & findNAs$V1 > 0))) #find columns that have errors
   if(length(colna > 0)){
     scenNum <- i
-    errors[[length(errors)+1]] <- scenNum
+    errors[[length(errors)+1]] <- paste("scenario ",scenNum,": ",paste(colna,collapse=", "))
   } }
 
 # This loops checks for errors identified in the loop above and creates the csvs if no errors exist.
